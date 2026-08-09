@@ -3,51 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Landing Page</title>
+    <title>Video Portfolio & Support</title>
     <style>
-        /* Base Reset & Styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        /* CSS Styling for Professional Look */
+        :root {
+            --primary-bg: #f3f4f6;
+            --card-bg: #ffffff;
+            --btn-demo: #111827;
+            --btn-50: #4f46e5;
+            --btn-wa: #25d366;
+            --btn-web: #0ea5e9;
+            --text-light: #ffffff;
         }
 
         body {
-            background-color: #f4f7f6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--primary-bg);
+            margin: 0;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        /* Main Container */
         .container {
-            background-color: #ffffff;
-            max-width: 450px;
+            background-color: var(--card-bg);
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
+            max-width: 420px;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            box-sizing: border-box;
         }
 
-        /* Video Wrapper (Vertical / Shorts format - 9:16 Aspect Ratio) */
-        .video-container {
+        /* 9:16 Aspect Ratio Container for Shorts */
+        .video-wrapper {
             position: relative;
             width: 100%;
-            /* 9:16 aspect ratio calculation (16/9 = 1.777) */
-            padding-bottom: 177.77%; 
-            background-color: #000;
-            border-radius: 12px;
+            aspect-ratio: 9 / 16;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            background-color: #000;
         }
 
-        .video-container iframe {
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -56,59 +59,62 @@
             border: none;
         }
 
-        /* Buttons Section */
-        .button-group {
+        .btn-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .btn {
-            display: inline-block;
-            width: 100%;
-            padding: 16px;
-            text-align: center;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        /* Standard Button Styling */
-        .btn-primary {
-            background-color: #007bff;
-            color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-
-        /* WhatsApp Button Styling */
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: #ffffff;
-            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            border: none;
+            box-sizing: border-box;
         }
 
-        .btn-whatsapp:hover {
-            background-color: #1ebe57;
-            transform: translateY(-2px);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
-        /* SVG Icon for WhatsApp */
-        .whatsapp-icon {
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn-demo {
+            background-color: var(--btn-demo);
+            color: var(--text-light);
+        }
+
+        .btn-50 {
+            background-color: var(--btn-50);
+            color: var(--text-light);
+        }
+
+        .btn-wa {
+            background-color: var(--btn-wa);
+            color: var(--text-light);
+        }
+
+        .btn-web {
+            background-color: var(--btn-web);
+            color: var(--text-light);
+        }
+
+        /* WhatsApp Icon Style */
+        .wa-icon {
             width: 20px;
             height: 20px;
+            margin-right: 8px;
             fill: currentColor;
         }
     </style>
@@ -116,59 +122,48 @@
 <body>
 
     <div class="container">
-        
-        <!-- Main Video Embed (Shorts Format) -->
-        <div class="video-container">
+        <!-- Video Section (Vertical Shorts Format) -->
+        <div class="video-wrapper">
             <iframe 
-                src="https://www.youtube.com/embed/oG3MzPN8P14?rel=0" 
-                title="YouTube video player" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src="https://www.youtube.com/embed/oG3MzPN8P14?rel=0&modestbranding=1" 
+                title="YouTube Shorts Video" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <!-- Buttons -->
-        <div class="button-group">
-            <a href="https://superprofile.bio/vp/motion-graphics-one-video-demo-" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                Demo Video
-            </a>
+        <!-- Buttons Section -->
+        <div class="btn-group">
+            <a href="https://superprofile.bio/vp/motion-graphics-one-video-demo-" class="btn btn-demo" target="_blank">Demo Video</a>
             
-            <a href="https://superprofile.bio/vp/50-614-385" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                50 Videos
-            </a>
+            <a href="https://superprofile.bio/vp/50-614-385" class="btn btn-50" target="_blank">50 Video</a>
             
-            <button onclick="handleWhatsAppRedirect()" class="btn btn-whatsapp">
-                <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+            <a href="http://staexso.blogspot.com" class="btn btn-web" target="_blank">Website Link</a>
+            
+            <button onclick="handleWhatsAppRedirect()" class="btn btn-wa">
+                <svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.086 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
-                WhatsApp Support
+                Support
             </button>
         </div>
-
     </div>
 
-    <!-- Script for 50/50 WhatsApp redirection -->
+    <!-- JavaScript for 50/50 Random WhatsApp Redirect -->
     <script>
         function handleWhatsAppRedirect() {
-            // Numbers with country code (91 for India)
             const number1 = "919128969552";
             const number2 = "918932850102";
             
-            // Generate a random number between 0 and 1
-            const randomValue = Math.random();
+            const randomChance = Math.floor(Math.random() * 2);
             
-            // 50% chance for each number
-            let targetNumber;
-            if (randomValue < 0.5) {
-                targetNumber = number1;
-            } else {
-                targetNumber = number2;
-            }
+            const selectedNumber = (randomChance === 0) ? number1 : number2;
             
-            // Redirect to WhatsApp chat URL
-            const whatsappUrl = "https://wa.me/" + targetNumber;
+            const whatsappUrl = `https://wa.me/${selectedNumber}`;
+            
             window.open(whatsappUrl, '_blank');
         }
     </script>
 </body>
 </html>
+
